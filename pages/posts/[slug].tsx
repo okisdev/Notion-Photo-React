@@ -31,7 +31,7 @@ const PhotoPost: FC<{ notionPost: PostContent }> = ({ notionPost }: { notionPost
             <Head>
                 <title>{notionPost.title} - Notion Photo React Example</title>
                 <meta name='description' content={`${notionPost.title} - Notion Photo React Example`} />
-                <meta name='keywords' content={`${notionPost.title}, Harry Yep, Notion Photo React Example, Harrly`} />
+                <meta name='keywords' content={`${notionPost.title}, Harry Yep, Notion Photo React Example`} />
                 <meta property='og:title' content={`${notionPost.title} - Notion Photo React Example`} />
                 <meta property='og:description' content={`${notionPost.title} - Notion Photo React Example`} />
                 <meta property='og:image' content={`${notionPost.url}`} />
