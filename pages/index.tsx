@@ -39,10 +39,10 @@ const BlogHomePage = ({ posts }: { posts: PostContent[] }) => {
 
                 <meta property='og:title' content='Notion Photo React Example' />
                 <meta property='og:site_name' content='Notion Photo React Example' />
-                <meta property='og:url' content='https://react-notion-blog.demo.harisfox.com/' />
+                <meta property='og:url' content='https://react-notion-photo.demo.harisfox.com/' />
                 <meta property='og:description' content='Notion Photo React Example' />
                 <meta property='og:type' content='website' />
-                <meta property='og:image' content='https://cdn.harrly.com/global/assets/icon/android-chrome-256x256.png' />
+                <meta property='og:image' content='https://cdn.harrly.com/project/GitHub/Notion-Photo-React/img/Notion-Photo-React.Banner.png' />
                 <meta property='og:image:width' content='256' />
                 <meta property='og:image:height' content='256' />
             </Head>
