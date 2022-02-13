@@ -7,6 +7,7 @@ import PhotoFooter from '../components/PhotoFooter';
 import { PostContent } from '../utils/PostContent';
 import { getNotionPosts } from '../utils/getNotionPosts';
 import { Toaster } from 'react-hot-toast';
+import PhotoThemeSwither from '../components/PhotoThemeSwitcher';
 
 export const getStaticProps = async () => {
     const unSortedPosts = (await getNotionPosts()).filter((posts) => posts.published);
@@ -60,6 +61,8 @@ const PhotoHomePage = ({ posts }: { posts: PostContent[] }) => {
                 <PhotoBody posts={posts}></PhotoBody>
 
                 <PhotoFooter></PhotoFooter>
+
+                <PhotoThemeSwither></PhotoThemeSwither>
             </div>
         </div>
     );

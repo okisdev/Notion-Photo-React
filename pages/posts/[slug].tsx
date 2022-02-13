@@ -10,6 +10,7 @@ import PhotoCopyright from '../../components/PhotoCopyright';
 import PhotoBackHome from '../../components/PhotoBackHome';
 
 import { getNotionPosts } from '../../utils/getNotionPosts';
+import PhotoThemeSwither from '../../components/PhotoThemeSwitcher';
 
 export const getServerSideProps = async ({ params: { slug } }: { params: { slug: string } }) => {
     const notionPosts = (await getNotionPosts()).filter((posts) => posts.published);
@@ -69,6 +70,8 @@ const PhotoPost: FC<{ notionPost: PostContent }> = ({ notionPost }: { notionPost
                 <PhotoBackHome></PhotoBackHome>
 
                 <PhotoFooter></PhotoFooter>
+
+                <PhotoThemeSwither></PhotoThemeSwither>
             </div>
         </div>
     );

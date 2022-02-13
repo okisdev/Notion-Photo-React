@@ -4,7 +4,7 @@ const PhotoFooter = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <div id='notion-photo-footer' className='leading-relaxed h-auto mb-8 text-sm dark:text-[#adbac7]'>
+        <div id='notion-photo-footer' className='leading-relaxed text-sm dark:text-[#adbac7]'>
             <div className='text-center'>
                 <a
                     href='https://creativecommons.org/licenses/by-nc-sa/4.0/'

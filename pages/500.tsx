@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 import PhotoNavBar from '../components/PhotoNavBar';
 import PhotoFooter from '../components/PhotoFooter';
+import PhotoThemeSwither from '../components/PhotoThemeSwitcher';
 
 const Error500 = () => {
     return (
@@ -21,6 +22,8 @@ const Error500 = () => {
                 </div>
 
                 <PhotoFooter></PhotoFooter>
+
+                <PhotoThemeSwither></PhotoThemeSwither>
             </div>
         </div>
     );
