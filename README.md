@@ -22,7 +22,7 @@ A Photo Gallery powered by [Notion](https://notion.so), built with [React](https
 
 ### Preparation
 
--   **Notion API**: See [here](https://github.com/splitbee/notion-api-worker) for how to deploy a notion-api by yourself. (You can use [https://notion-api.splitbee.io/](https://notion-api.splitbee.io/) instead)
+-   **Notion API**: See [here](https://github.com/splitbee/notion-api-worker) for how to deploy a notion-api by yourself. (You can use `notion-api.splitbee.io` instead)
 -   **Public Notion Table**: Create a notion table with below properties. (You can duplicate a template [here](https://harrly.notion.site/d04d7d2efc9a4e79a3c98d7d4c9e8fc9). Please make sure you have content inside a property box)
     -   title: Title
     -   location: Select
