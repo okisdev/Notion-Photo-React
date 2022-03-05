@@ -12,6 +12,8 @@ import PhotoBackHome from '../../components/PhotoBackHome';
 import { getNotionPosts } from '../../utils/getNotionPosts';
 import PhotoThemeSwither from '../../components/PhotoThemeSwitcher';
 
+import siteConfig from '../../config/site.config';
+
 export const getServerSideProps = async ({ params: { slug } }: { params: { slug: string } }) => {
     const notionPosts = (await getNotionPosts()).filter((posts) => posts.published);
 
@@ -30,20 +32,25 @@ const PhotoPost: FC<{ notionPost: PostContent }> = ({ notionPost }: { notionPost
     return (
         <div>
             <Head>
-                <title>{notionPost.title} - Notion Photo React Example</title>
-                <meta name='description' content={`${notionPost.title} - Notion Photo React Example`} />
-                <meta name='keywords' content={`${notionPost.title}, Harry Yep, Notion Photo React Example`} />
-                <meta property='og:title' content={`${notionPost.title} - Notion Photo React Example`} />
-                <meta property='og:description' content={`${notionPost.title} - Notion Photo React Example`} />
+                <title>
+                    {notionPost.title} - {siteConfig.global.site.name}
+                </title>
+
+                <meta name='description' content={`${notionPost.title} - ${siteConfig.global.site.name}`} />
+                <meta name='keywords' content={`${notionPost.title}, ${siteConfig.global.author}, ${siteConfig.global.site.name}`} />
+
+                <meta property='og:title' content={`${notionPost.title} - ${siteConfig.global.site.name}`} />
+                <meta property='og:description' content={`${notionPost.title} - ${siteConfig.global.site.name}`} />
                 <meta property='og:image' content={`${notionPost.url}`} />
-                <meta property='og:url' content={`https://react-notion-blog.demo.harisfox.com/posts/${notionPost.slug}`} />
+                <meta property='og:url' content={`${siteConfig.global.site.url}/posts/${notionPost.slug}`} />
                 <meta property='og:type' content='website' />
-                <meta property='og:site_name' content='Notion Photo React Example' />
+                <meta property='og:site_name' content={siteConfig.global.site.name} />
+
                 <meta name='twitter:card' content='summary_large_image' />
-                <meta name='twitter:title' content={`${notionPost.title} - Notion Photo React Example`} />
-                <meta name='twitter:description' content={`${notionPost.title} - Notion Photo React Example`} />
+                <meta name='twitter:title' content={`${notionPost.title} - ${siteConfig.global.site.name}`} />
+                <meta name='twitter:description' content={`${notionPost.title} - ${siteConfig.global.site.name}`} />
                 <meta name='twitter:image' content={`${notionPost.url}`} />
-                <meta name='twitter:url' content={`https://react-notion-blog.demo.harisfox.com/posts/${notionPost.slug}`} />
+                <meta name='twitter:url' content={`${siteConfig.global.site.url}/posts/${notionPost.slug}`} />
             </Head>
 
             <div id='notion-photo-post' className='min-h-screen flex flex-col dark:bg-[#23272d] font-Rubik select-none'>

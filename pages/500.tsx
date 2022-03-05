@@ -4,11 +4,13 @@ import PhotoNavBar from '../components/PhotoNavBar';
 import PhotoFooter from '../components/PhotoFooter';
 import PhotoThemeSwither from '../components/PhotoThemeSwitcher';
 
+import siteConfig from '../config/site.config';
+
 const Error500 = () => {
     return (
         <div>
             <Head>
-                <title>500 - Notion Photo React Example</title>
+                <title>500 - {siteConfig.global.site.name}</title>
             </Head>
 
             <div id='notion-photo-500' className='min-h-screen flex flex-col dark:bg-[#23272d] font-Rubik select-none'>

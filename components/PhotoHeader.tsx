@@ -1,9 +1,11 @@
-function PhotoHeader() {
+import siteConfig from '../config/site.config';
+
+const PhotoHeader = () => {
     return (
         <div id='notion-photo-header' className='flex flex-row justify-center items-center my-10 space-x-2 md:space-x-8 dark:text-[#adbac7]'>
             <div id='notion-photo-header-content'>
                 <div id='notion-photo-header-title' className='text-center text-2xl font-bold'>
-                    <span>Notion Photo React Example</span>
+                    <span>{siteConfig.global.site.name}</span>
                 </div>
                 <div id='notion-photo-header-description' className='pt-6'>
                     <span className='text-center'>
@@ -51,6 +53,6 @@ function PhotoHeader() {
             </div>
         </div>
     );
-}
+};
 
 export default PhotoHeader;

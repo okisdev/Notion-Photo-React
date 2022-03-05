@@ -1,3 +1,5 @@
+import siteConfig from '../config/site.config';
+
 const PhotoCopyright = ({ notionPost }: { notionPost: any }) => {
     const publishDomain = typeof window !== 'undefined' ? window.location.origin : 'https://react-photo-blog.demo.harisfox.com/';
 
@@ -34,12 +36,12 @@ const PhotoCopyright = ({ notionPost }: { notionPost: any }) => {
                         <span>License</span>
                         <span className='font-bold'>
                             <a
-                                href='https://creativecommons.org/licenses/by-nc-sa/4.0/'
+                                href={siteConfig.global.content.license.url}
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 className='transition duration-500 underline hover:bg-yellow-500 dark:hover:bg-yellow-600'
                             >
-                                CC BY-NC-SA 4.0
+                                {siteConfig.global.content.license.name}
                             </a>
                         </span>
                     </div>
