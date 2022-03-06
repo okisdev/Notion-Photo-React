@@ -7,8 +7,8 @@ module.exports = {
             url: 'https://react-notion-photo.demo.harisfox.com/',
             banner_img: `https://cdn.harrly.com/project/GitHub/Notion-Photo-React/img/Notion-Photo-React.Banner.png`,
             language: [
-                { name: 'British English', code: '/en-GB' },
-                { name: 'Simplified Chinese', code: '/zh-CN' },
+                { name: 'British English', code: 'en-GB' },
+                { name: 'Simplified Chinese', code: 'zh-CN' },
             ],
         },
         content: {
