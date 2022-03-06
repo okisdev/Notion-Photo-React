@@ -2,19 +2,22 @@ import Head from 'next/head';
 
 import { FC } from 'react';
 
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+import { getNotionPosts } from '../../utils/getNotionPosts';
 import { PostContent } from '../../utils/PostContent';
 
 import PhotoNavBar from '../../components/PhotoNavBar';
 import PhotoFooter from '../../components/PhotoFooter';
 import PhotoCopyright from '../../components/PhotoCopyright';
 import PhotoBackHome from '../../components/PhotoBackHome';
-
-import { getNotionPosts } from '../../utils/getNotionPosts';
 import PhotoThemeSwither from '../../components/PhotoThemeSwitcher';
 
 import siteConfig from '../../config/site.config';
 
-export const getServerSideProps = async ({ params: { slug } }: { params: { slug: string } }) => {
+export const getServerSideProps = async ({ params, locale }: any) => {
+    const { slug } = params as { slug: string };
+
     const notionPosts = (await getNotionPosts()).filter((posts) => posts.published);
 
     const notionPostIndex = notionPosts.findIndex((post) => post.slug === slug);
@@ -24,6 +27,7 @@ export const getServerSideProps = async ({ params: { slug } }: { params: { slug:
     return {
         props: {
             notionPost,
+            ...(await serverSideTranslations(locale, ['common'])),
         },
     };
 };

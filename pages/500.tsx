@@ -1,10 +1,20 @@
 import Head from 'next/head';
 
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import PhotoNavBar from '../components/PhotoNavBar';
 import PhotoFooter from '../components/PhotoFooter';
 import PhotoThemeSwither from '../components/PhotoThemeSwitcher';
 
 import siteConfig from '../config/site.config';
+
+export async function getStaticProps({ locale }: any) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ['common'])),
+        },
+    };
+}
 
 const Error500 = () => {
     return (

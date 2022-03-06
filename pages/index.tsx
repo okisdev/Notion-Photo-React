@@ -2,6 +2,8 @@ import Head from 'next/head';
 
 import { Toaster } from 'react-hot-toast';
 
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import PhotoNavBar from '../components/PhotoNavBar';
 import PhotoBody from '../components/PhotoBody';
 import PhotoFooter from '../components/PhotoFooter';
@@ -12,7 +14,7 @@ import { getNotionPosts } from '../utils/getNotionPosts';
 
 import siteConfig from '../config/site.config';
 
-export const getStaticProps = async () => {
+export const getStaticProps = async ({ locale }: any) => {
     const unSortedPosts = (await getNotionPosts()).filter((posts) => posts.published);
 
     const posts = unSortedPosts.sort(function (a, b) {
@@ -22,6 +24,7 @@ export const getStaticProps = async () => {
     return {
         props: {
             posts,
+            ...(await serverSideTranslations(locale, ['common'])),
         },
         revalidate: 60,
     };

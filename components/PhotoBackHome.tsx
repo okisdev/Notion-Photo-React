@@ -1,15 +1,19 @@
 import Link from 'next/link';
 
+import { useTranslation } from 'next-i18next';
+
 import { BiArrowBack } from 'react-icons/bi';
 
 const PhotoBackHome = () => {
+    const { t } = useTranslation('common');
+
     return (
         <div id='notion-blog-back-home' className='my-3 mx-auto w-11/12 md:w-3/5 leading-relaxed'>
             <div className='rounded border-2 p-3 dark:text-[#adbac7]'>
                 <div className='flex'>
                     <span className='flex flex-row items-center space-x-2 transition duration-500 underline hover:bg-yellow-500 dark:hover:bg-yellow-600'>
                         <BiArrowBack />
-                        <Link href='/'>Back Home</Link>
+                        <Link href='/'>{t('Back Home')}</Link>
                     </span>
                 </div>
             </div>

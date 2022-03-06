@@ -2,6 +2,8 @@ import Link from 'next/link';
 
 import toast from 'react-hot-toast';
 
+import { useTranslation } from 'next-i18next';
+
 import { IoIosPaper } from 'react-icons/io';
 import { MdDateRange } from 'react-icons/md';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
@@ -12,6 +14,8 @@ import { PostContent } from '../utils/PostContent';
 import getNotionPostSlug from '../utils/getNotionPostSlug';
 
 const PhotoCard = ({ post }: { post: PostContent }) => {
+    const { t } = useTranslation('common');
+
     return (
         <div id='notion-photo-body-card' className='grid break-inside-avoid'>
             <div id='notion-photo-body-card-content' className='transition duration-500 ease-in-out p-3 my-3 border-2 rounded-lg bg-white dark:bg-gray-500 hover:shadow-2xl'>
@@ -22,7 +26,7 @@ const PhotoCard = ({ post }: { post: PostContent }) => {
                     <IoIosPaper />
                     <div
                         onClick={() => {
-                            toast(`Loading...`, {
+                            toast(t('Loading...'), {
                                 icon: <AiOutlineLoading3Quarters className='animate-spin' />,
                                 style: {
                                     borderRadius: '15px',
