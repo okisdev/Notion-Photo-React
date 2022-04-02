@@ -8,13 +8,13 @@ const PhotoCopyright = ({ notionPost }: { notionPost: any }) => {
     const { t } = useTranslation('common');
 
     return (
-        <div id='notion-blog-copyright' className='my-3 mx-auto w-11/12 md:w-3/5 leading-relaxed'>
-            <div className='rounded border-2 p-3 space-y-3 dark:text-[#adbac7]'>
-                <div id='notion-blog-copyright-header'>
-                    <div id='notion-blog-copyright-title'>
+        <div id='notion-photo-copyright' className='container mx-auto px-6 sm:px-8 my-3'>
+            <div className='mx-auto md:w-7/12 rounded border-2 p-3 space-y-3 dark:text-[#adbac7]'>
+                <div id='notion-photo-copyright-header'>
+                    <div id='notion-photo-copyright-title'>
                         <span>{notionPost.title}</span>
                     </div>
-                    <div id='notion-blog-copyright-url'>
+                    <div id='notion-photo-copyright-url'>
                         <span>
                             <a
                                 href={`${publishDomain}/posts/${notionPost.slug}`}
@@ -27,16 +27,16 @@ const PhotoCopyright = ({ notionPost }: { notionPost: any }) => {
                         </span>
                     </div>
                 </div>
-                <div id='notion-blog-copyright-body' className='flex flew-row space-x-3'>
-                    <div id='notion-blog-copyright-author' className='flex flex-col'>
+                <div id='notion-photo-copyright-body' className='flex flew-row space-x-3'>
+                    <div id='notion-photo-copyright-author' className='flex flex-col'>
                         <span>{t('Author')}</span>
                         <span className='font-bold'>{notionPost.author}</span>
                     </div>
-                    <div id='notion-blog-copyright-date' className='flex flex-col'>
+                    <div id='notion-photo-copyright-date' className='flex flex-col'>
                         <span>{t('Date')}</span>
                         <span className='font-bold'>{notionPost.date}</span>
                     </div>
-                    <div id='notion-blog-copyright-license' className='flex flex-col'>
+                    <div id='notion-photo-copyright-license' className='flex flex-col'>
                         <span>{t('License')}</span>
                         <span className='font-bold'>
                             <a
@@ -50,8 +50,8 @@ const PhotoCopyright = ({ notionPost }: { notionPost: any }) => {
                         </span>
                     </div>
                 </div>
-                <div id='notion-blog-copyright-footer'>
-                    <p id='notion-blog-copyright-reminder' className='text-sm'>
+                <div id='notion-photo-copyright-footer'>
+                    <p id='notion-photo-copyright-reminder' className='text-sm'>
                         {t('* When reposting, sharing or citing this article, please abide by the license agreement and indicate the source of the article.')}
                     </p>
                 </div>
