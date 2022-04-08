@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 
 import { useTranslation } from 'next-i18next';
 
-import { IoIosPaper } from 'react-icons/io';
+import { HiOutlinePhotograph } from 'react-icons/hi';
 import { MdDateRange } from 'react-icons/md';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { TiLocationArrowOutline } from 'react-icons/ti';
@@ -24,8 +24,11 @@ const PhotoCard = ({ post }: { post: PostContent }) => {
                 <div id='notion-photo-body-card-image' className='py-3'>
                     <img src={post.url} alt={post.title} className='rounded' />
                 </div>
-                <div id='notion-photo-body-card-title' className='flex items-center font-bold text-lg mb-2 space-x-3 dark:text-blue-100 transition duration-500 ease-in-out hover:text-blue-400'>
-                    <IoIosPaper />
+                <div
+                    id='notion-photo-body-card-title'
+                    className='flex items-center font-bold text-lg mb-2 space-x-3 dark:text-blue-200 transition duration-500 ease-in-out hover:text-blue-400 dark:hover:text-blue-400'
+                >
+                    <HiOutlinePhotograph />
                     <div
                         onClick={() => {
                             toast(t('Loading...'), {
