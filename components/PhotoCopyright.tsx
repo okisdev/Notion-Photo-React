@@ -12,7 +12,7 @@ const PhotoCopyright = ({ notionPost }: { notionPost: any }) => {
             <div className='mx-auto md:w-7/12 rounded border-2 p-3 space-y-3 dark:text-[#adbac7]'>
                 <div id='notion-photo-copyright-header'>
                     <div id='notion-photo-copyright-title'>
-                        <span>{notionPost.title}</span>
+                        <span className='font-bold'>{notionPost.title}</span>
                     </div>
                     <div id='notion-photo-copyright-url'>
                         <span>
