@@ -13,7 +13,9 @@ const PhotoBackHome = () => {
                 <div className='flex'>
                     <span className='flex flex-row items-center space-x-2 transition duration-500 underline hover:bg-yellow-500 dark:hover:bg-yellow-600'>
                         <BiArrowBack />
-                        <Link href='/'>{t('Back Home')}</Link>
+                        <Link href='/' passHref>
+                            <a>{t('Back Home')}</a>
+                        </Link>
                     </span>
                 </div>
             </div>
