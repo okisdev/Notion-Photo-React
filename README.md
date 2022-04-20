@@ -4,6 +4,8 @@
 
 A Photo Gallery powered by [Notion](https://notion.so), built with [React](https://reactjs.org), [Next.js](https://nextjs.org), [tailwindcss](https://tailwindcss.com), [TypeScript](https://www.typescriptlang.org/), [Notion-Api-Worker](https://github.com/splitbee/notion-api-worker) and more.
 
+> See [Notion Blog React](https://github.com/Harry-Yep/Notion-Blog-React), if you would like to blog with Notion.
+
 ## Features
 
 -   Easily change the things you want by editing [`.env`](./.env.example) file.
