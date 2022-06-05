@@ -6,6 +6,10 @@ A Photo Gallery powered by [Notion](https://notion.so), built with [React](https
 
 > See [Notion Blog React](https://github.com/Harry-Yep/Notion-Blog-React), if you would like to blog with Notion.
 
+## Demo
+
+-   [npr.okis.dev](https://npr.okis.dev)
+
 ## Features
 
 -   Easily change the things you want by editing [`.env`](./.env.example) file.
@@ -23,6 +27,11 @@ A Photo Gallery powered by [Notion](https://notion.so), built with [React](https
 ## How to deploy
 
 Please visit Notion Photo React [Documentation](https://docs.harrly.com/docs/notion-photo-react) for more details.
+
+## Problem(s) with deployment
+
+-   email: [hi#harrly.com](mailto:hi@harrly.com)
+-   Telegram: [@Harry_Yep](https://t.me/Harry_Yep)
 
 ## Improvement / Plans
 
