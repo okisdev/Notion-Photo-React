@@ -20,13 +20,13 @@ const PhotoCard = ({ post }: { post: PostContent }) => {
 
     return (
         <div id='notion-photo-body-card' className='grid break-inside-avoid'>
-            <div id='notion-photo-body-card-content' className='transition duration-500 ease-in-out p-3 my-3 border-2 rounded-lg bg-white dark:bg-gray-500 hover:shadow-2xl'>
+            <div id='notion-photo-body-card-content' className='my-3 rounded-lg border-2 bg-white p-3 transition duration-500 ease-in-out hover:shadow-2xl dark:bg-gray-500'>
                 <div id='notion-photo-body-card-image' className='py-3'>
                     <img src={post.url} alt={post.title} className='rounded' />
                 </div>
                 <div
                     id='notion-photo-body-card-title'
-                    className='flex items-center font-bold text-lg mb-2 space-x-3 dark:text-blue-200 transition duration-500 ease-in-out hover:text-blue-400 dark:hover:text-blue-400'
+                    className='mb-2 flex items-center space-x-3 text-lg font-bold transition duration-500 ease-in-out hover:text-blue-400 dark:text-blue-200 dark:hover:text-blue-400'
                 >
                     <HiOutlinePhotograph />
                     <div
@@ -61,7 +61,7 @@ const PhotoCard = ({ post }: { post: PostContent }) => {
                             <span className='flex flex-col'>
                                 <TiLocationArrowOutline className='mb-1' />
                                 <span className='flex flex-row'>
-                                    <div id='notion-photo-body-card-tags-item' className='bg-blue-200 dark:bg-[#728796] px-3 rounded-xl'>
+                                    <div id='notion-photo-body-card-tags-item' className='rounded-xl bg-blue-200 px-3 dark:bg-[#728796]'>
                                         <span className='text-sm dark:text-gray-300'>{post.location}</span>
                                     </div>
                                 </span>
@@ -77,7 +77,7 @@ const PhotoCard = ({ post }: { post: PostContent }) => {
                                 </span>
                             </div>
                             <div>•</div>
-                            <div id='notion-photo-body-card-tags-item' className='bg-blue-200 dark:bg-[#728796] px-3 rounded-xl'>
+                            <div id='notion-photo-body-card-tags-item' className='rounded-xl bg-blue-200 px-3 dark:bg-[#728796]'>
                                 <span className='text-sm dark:text-gray-300'>{post.location}</span>
                             </div>
                         </div>

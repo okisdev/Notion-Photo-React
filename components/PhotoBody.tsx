@@ -7,7 +7,7 @@ import { PostContent } from '../utils/PostContent';
 
 const PhotoBody = ({ posts }: { posts: PostContent[] }) => {
     return (
-        <div className='container mx-auto px-4 sm:px-6 justify-center flex-grow'>
+        <div className='container mx-auto flex-grow justify-center px-4 sm:px-6'>
             <div id='notion-photo-content' className='my-16'>
                 <PhotoHeader></PhotoHeader>
 

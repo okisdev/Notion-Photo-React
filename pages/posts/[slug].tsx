@@ -57,10 +57,10 @@ const PhotoPost: FC<{ notionPost: PostContent }> = ({ notionPost }: { notionPost
                 <meta name='twitter:url' content={`${siteConfig.global.site.url}/posts/${notionPost.slug}`} />
             </Head>
 
-            <div id='notion-photo-post' className='min-h-screen flex flex-col dark:bg-[#23272d] font-Rubik select-none'>
+            <div id='notion-photo-post' className='flex min-h-screen select-none flex-col font-Rubik dark:bg-[#23272d]'>
                 <PhotoNavBar></PhotoNavBar>
 
-                <div className='container mx-auto px-6 sm:px-8 dark:text-[#adbac7]'>
+                <div className='container mx-auto px-6 dark:text-[#adbac7] sm:px-8'>
                     <div id='notion-photo-post-body-content' className='my-20 leading-6'>
                         <article id='notion-photo-post-article'>
                             <div id='notion-photo-post-detail' className='space-y-3'>

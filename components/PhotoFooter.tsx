@@ -6,9 +6,9 @@ const PhotoFooter = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <div id='notion-photo-footer' className='leading-relaxed text-sm dark:text-[#adbac7]'>
+        <div id='notion-photo-footer' className='text-sm leading-relaxed dark:text-[#adbac7]'>
             <div className='text-center'>
-                <a href={siteConfig.global.content.license.url} className='transition duration-500 underline hover:bg-yellow-500 dark:hover:bg-yellow-600' target='_blank' rel='noopener noreferrer'>
+                <a href={siteConfig.global.content.license.url} className='underline transition duration-500 hover:bg-yellow-500 dark:hover:bg-yellow-600' target='_blank' rel='noopener noreferrer'>
                     {siteConfig.global.content.license.name}
                 </a>
                 <p>
@@ -19,24 +19,24 @@ const PhotoFooter = () => {
                 </p>
                 <p id='notion-photo-footer-built-with' className='text-sm md:px-52'>
                     Built with{' '}
-                    <a className='transition duration-500 underline hover:bg-yellow-500 dark:hover:bg-yellow-600' href='https://reactjs.org'>
+                    <a className='underline transition duration-500 hover:bg-yellow-500 dark:hover:bg-yellow-600' href='https://reactjs.org'>
                         React
                     </a>{' '}
                     &{' '}
-                    <a className='transition duration-500 underline hover:bg-yellow-500 dark:hover:bg-yellow-600' href='https://nextjs.org'>
+                    <a className='underline transition duration-500 hover:bg-yellow-500 dark:hover:bg-yellow-600' href='https://nextjs.org'>
                         Next.js
                     </a>{' '}
                     &{' '}
-                    <a className='transition duration-500 underline hover:bg-yellow-500 dark:hover:bg-yellow-600' href='https://tailwindcss.com'>
+                    <a className='underline transition duration-500 hover:bg-yellow-500 dark:hover:bg-yellow-600' href='https://tailwindcss.com'>
                         tailwindcss
                     </a>{' '}
                     &{' '}
-                    <a className='transition duration-500 underline hover:bg-yellow-500 dark:hover:bg-yellow-600' href='https://www.typescriptlang.org/'>
+                    <a className='underline transition duration-500 hover:bg-yellow-500 dark:hover:bg-yellow-600' href='https://www.typescriptlang.org/'>
                         TypeScript
                     </a>
                 </p>
                 <PoweredByVercel
-                    className='flex items-center justify-center my-1'
+                    className='my-1 flex items-center justify-center'
                     svgProps={{
                         width: 150,
                     }}

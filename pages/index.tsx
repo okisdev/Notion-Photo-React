@@ -59,7 +59,7 @@ const PhotoHomePage = ({ posts }: { posts: PostContent[] }) => {
                 <meta name='twitter:url' content={siteConfig.global.site.url} />
             </Head>
 
-            <div id='notion-photo-homepage' className='min-h-screen flex flex-col dark:bg-[#23272d] font-Rubik select-none'>
+            <div id='notion-photo-homepage' className='flex min-h-screen select-none flex-col font-Rubik dark:bg-[#23272d]'>
                 <Toaster />
 
                 <PhotoNavBar></PhotoNavBar>

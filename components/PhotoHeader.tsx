@@ -8,7 +8,7 @@ const stringToJSX = () => {
 
 const PhotoHeader = () => {
     return (
-        <div id='notion-photo-header' className='flex flex-row justify-center items-center my-10 space-x-2 md:space-x-8 dark:text-[#adbac7]'>
+        <div id='notion-photo-header' className='my-10 flex flex-row items-center justify-center space-x-2 dark:text-[#adbac7] md:space-x-8'>
             <div id='notion-photo-header-content'>
                 <div id='notion-photo-header-title' className='text-center text-2xl font-bold'>
                     <span>{siteConfig.global.site.name}</span>

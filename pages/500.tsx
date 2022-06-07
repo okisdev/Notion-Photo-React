@@ -23,7 +23,7 @@ const Error500 = () => {
                 <title>500 - {siteConfig.global.site.name}</title>
             </Head>
 
-            <div id='notion-photo-500' className='min-h-screen flex flex-col dark:bg-[#23272d] font-Rubik select-none'>
+            <div id='notion-photo-500' className='flex min-h-screen select-none flex-col font-Rubik dark:bg-[#23272d]'>
                 <PhotoNavBar></PhotoNavBar>
 
                 <div id='notion-photo-500-content' className='mx-auto flex flex-grow leading-10 dark:text-[#adbac7]'>
