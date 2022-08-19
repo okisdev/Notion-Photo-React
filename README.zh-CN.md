@@ -24,7 +24,7 @@ A Photo Gallery powered by [Notion](https://notion.so), built with [React](https
 
 ## 如何部署
 
-请访问 Notion Photo React [说明文档](https://docs.harrly.com/zh-CN/docs/notion-photo-react)查看更多。
+请访问 Notion Photo React [说明文档](https://docs.okis.dev/zh-CN/docs/notion-photo-react)查看更多。
 
 ## 部署出现问题？
 

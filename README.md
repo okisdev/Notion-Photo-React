@@ -26,7 +26,7 @@ A Photo Gallery powered by [Notion](https://notion.so), built with [React](https
 
 ## How to deploy
 
-Please visit Notion Photo React [Documentation](https://docs.harrly.com/docs/notion-photo-react) for more details.
+Please visit Notion Photo React [Documentation](https://docs.okis.dev/docs/notion-photo-react) for more details.
 
 ## Problem(s) with deployment
 
