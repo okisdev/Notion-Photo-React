@@ -30,8 +30,8 @@ Please visit Notion Photo React [Documentation](https://docs.okis.dev/docs/notio
 
 ## Problem(s) with deployment
 
--   email: [hi#harrly.com](mailto:hi@harrly.com)
--   Telegram: [@Harry_Yep](https://t.me/Harry_Yep)
+-   email: [hi@okis.dev](mailto:hi@okis.dev)
+-   Telegram: [@okisdev](https://t.me/okisdev)
 
 ## Improvement / Plans
 

@@ -28,8 +28,8 @@ A Photo Gallery powered by [Notion](https://notion.so), built with [React](https
 
 ## 部署出现问题？
 
--   email: [hi#harrly.com](mailto:hi@harrly.com)
--   Telegram: [@Harry_Yep](https://t.me/Harry_Yep)
+-   email: [hi@okis.dev](mailto:hi@okis.dev)
+-   Telegram: [@okisdev](https://t.me/okisdev)
 
 ## 日后计划
 
