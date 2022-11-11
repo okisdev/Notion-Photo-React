@@ -5,7 +5,7 @@ module.exports = {
         author: 'Harry Yep',
         site: {
             name: 'Notion Photo React Example',
-            description: 'Photo Gallery built with Notion, React, Next.js, tailwindcss, TypeScript, Notion-Api-Worker and more.',
+            description: 'Photo Gallery built with Notion, React.JS, Next.JS, tailwindcss, TypeScript, notion-api-worker and more.',
             url: 'https://react-notion-photo.demo.harisfox.com/',
             banner_img: `https://cdn.harrly.com/project/GitHub/Notion-Photo-React/img/Notion-Photo-React.Banner.png`,
             language: [

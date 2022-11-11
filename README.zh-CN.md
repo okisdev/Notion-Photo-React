@@ -2,9 +2,9 @@
 
 > 由 Notion 提供支持的快速无服务器照片库。
 
-A Photo Gallery powered by [Notion](https://notion.so), built with [React](https://reactjs.org), [Next.js](https://nextjs.org), [tailwindcss](https://tailwindcss.com), [TypeScript](https://www.typescriptlang.org/), [Notion-Api-Worker](https://github.com/splitbee/notion-api-worker) and more.
+由 [Notion](https://notion.so) 提供支持的照片库，使用 [React.JS](https://reactjs.org), [Next.JS](https://nextjs.org), [tailwindcss](https://tailwindcss.com), [TypeScript](https://www.typescriptlang.org/), [notion-api-worker](https://github.com/splitbee/notion-api-worker) 等构建。
 
-## Demo
+## 演示
 
 -   [npr.okis.dev](https://npr.okis.dev)
 

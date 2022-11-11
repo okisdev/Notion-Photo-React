@@ -2,7 +2,7 @@
 
 > A fast serverless Photo Gallery powered by Notion.
 
-A Photo Gallery powered by [Notion](https://notion.so), built with [React](https://reactjs.org), [Next.js](https://nextjs.org), [tailwindcss](https://tailwindcss.com), [TypeScript](https://www.typescriptlang.org/), [Notion-Api-Worker](https://github.com/splitbee/notion-api-worker) and more.
+A Photo Gallery powered by [Notion](https://notion.so), built with [React.JS](https://reactjs.org), [Next.JS](https://nextjs.org), [tailwindcss](https://tailwindcss.com), [TypeScript](https://www.typescriptlang.org/), [notion-api-worker](https://github.com/splitbee/notion-api-worker) and more.
 
 > See [Notion Blog React](https://github.com/Harry-Yep/Notion-Blog-React), if you would like to blog with Notion.
 
