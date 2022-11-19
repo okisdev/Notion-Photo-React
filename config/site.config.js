@@ -6,7 +6,7 @@ module.exports = {
         site: {
             name: 'Notion Photo React Example',
             description: 'Photo Gallery built with Notion, React.JS, Next.JS, tailwindcss, TypeScript, notion-api-worker and more.',
-            url: 'https://react-notion-photo.demo.harisfox.com/',
+            url: 'https://npr.okis.dev/',
             banner_img: `https://cdn.harrly.com/project/GitHub/Notion-Photo-React/img/Notion-Photo-React.Banner.png`,
             language: [
                 { name: 'British English', code: 'en-GB' },

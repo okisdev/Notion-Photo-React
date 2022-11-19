@@ -37,21 +37,21 @@ const PhotoNavBar = () => {
 
                         <div id='notion-photo-navbar-end' className='flex items-end'>
                             <div className='mx-3'>
-                                <Link href='https://www.harrly.com'>
+                                <Link href='https://harryyep.com'>
                                     <a>
                                         <CgHomeAlt className='h-6 w-6' />
                                     </a>
                                 </Link>
                             </div>
                             <div className='mx-3'>
-                                <Link href='https://github.com/Harry-Yep'>
+                                <Link href='https://github.com/okisdev'>
                                     <a>
                                         <FiGithub className='h-6 w-6' />
                                     </a>
                                 </Link>
                             </div>
                             <div className='mx-3'>
-                                <Link href='https://www.harrly.com/privacy-policy'>
+                                <Link href='https://vercel.com/legal/privacy-policy'>
                                     <a>
                                         <AiOutlineSafety className='h-6 w-6' />
                                     </a>
