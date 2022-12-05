@@ -21,7 +21,7 @@
     "react-icons": "4.7.1"
   },
   "devDependencies": {
-    "@types/node": "18.11.10",
+    "@types/node": "18.11.11",
     "@types/react": "17.0.52",
     "autoprefixer": "10.4.13",
     "eslint": "8.28.0",
