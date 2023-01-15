@@ -34,18 +34,18 @@ const PhotoNavBar = () => {
                         </div>
 
                         <div id='notion-photo-navbar-end' className='flex items-end'>
-                            <div className='mx-3' aria-label='website'>
-                                <Link href='https://harryyep.com'>
+                            <div className='mx-3'>
+                                <Link href='https://harryyep.com' aria-label='website'>
                                     <CgHomeAlt className='h-6 w-6' />
                                 </Link>
                             </div>
-                            <div className='mx-3' aria-label='github'>
-                                <Link href='https://github.com/okisdev'>
+                            <div className='mx-3'>
+                                <Link href='https://github.com/okisdev' aria-label='github'>
                                     <FiGithub className='h-6 w-6' />
                                 </Link>
                             </div>
-                            <div className='mx-3' aria-label='privacy policy'>
-                                <Link href='https://vercel.com/legal/privacy-policy'>
+                            <div className='mx-3'>
+                                <Link href='https://vercel.com/legal/privacy-policy' aria-label='privacy policy'>
                                     <AiOutlineSafety className='h-6 w-6' />
                                 </Link>
                             </div>
