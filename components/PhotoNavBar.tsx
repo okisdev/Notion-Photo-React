@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { Menu, Transition, Disclosure } from '@headlessui/react';
+import { Menu, Transition } from '@headlessui/react';
 
 import { FiGithub } from 'react-icons/fi';
 import { BiHome } from 'react-icons/bi';
@@ -27,34 +27,26 @@ const PhotoNavBar = () => {
                     <nav className='flex'>
                         <div id='notion-photo-navbar-start' className='mr-20 flex items-start md:mr-80'>
                             <div className='mx-3'>
-                                <Link href='/'>
-                                    <a>
-                                        <BiHome className='h-6 w-6' />
-                                    </a>
+                                <Link href='/' aria-label='home'>
+                                    <BiHome className='h-6 w-6' />
                                 </Link>
                             </div>
                         </div>
 
                         <div id='notion-photo-navbar-end' className='flex items-end'>
-                            <div className='mx-3'>
+                            <div className='mx-3' aria-label='website'>
                                 <Link href='https://harryyep.com'>
-                                    <a>
-                                        <CgHomeAlt className='h-6 w-6' />
-                                    </a>
+                                    <CgHomeAlt className='h-6 w-6' />
                                 </Link>
                             </div>
-                            <div className='mx-3'>
+                            <div className='mx-3' aria-label='github'>
                                 <Link href='https://github.com/okisdev'>
-                                    <a>
-                                        <FiGithub className='h-6 w-6' />
-                                    </a>
+                                    <FiGithub className='h-6 w-6' />
                                 </Link>
                             </div>
-                            <div className='mx-3'>
+                            <div className='mx-3' aria-label='privacy policy'>
                                 <Link href='https://vercel.com/legal/privacy-policy'>
-                                    <a>
-                                        <AiOutlineSafety className='h-6 w-6' />
-                                    </a>
+                                    <AiOutlineSafety className='h-6 w-6' />
                                 </Link>
                             </div>
                             <Menu as='div' className='relative mx-3 ml-3'>
@@ -79,7 +71,9 @@ const PhotoNavBar = () => {
                                                 <Menu.Item key={index}>
                                                     {({ active }) => (
                                                         <Link href={item.code} as={asPath} locale={item.code}>
-                                                            <a className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}>{item.name}</a>
+                                                            <a className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')} aria-label={item.name}>
+                                                                {item.name}
+                                                            </a>
                                                         </Link>
                                                     )}
                                                 </Menu.Item>

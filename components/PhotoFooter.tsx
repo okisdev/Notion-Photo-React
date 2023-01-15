@@ -12,7 +12,7 @@ const PhotoFooter = () => {
                     {siteConfig.global.content.license.name}
                 </a>
                 <p>
-                    Copyright &#169; {currentYear} {siteConfig.global.author}. All rights reserved.
+                    Copyright &#169; <span>{currentYear}</span> <span>{siteConfig.global.author}</span>. All rights reserved.
                 </p>
                 <p>
                     Made by Harry Yep with <span className='text-red-600'>♥</span>
@@ -40,6 +40,7 @@ const PhotoFooter = () => {
                     svgProps={{
                         width: 150,
                     }}
+                    aria-label='Powered By Vercel'
                 />
             </div>
         </div>

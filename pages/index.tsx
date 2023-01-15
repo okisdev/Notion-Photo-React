@@ -5,7 +5,6 @@ import { Toaster } from 'react-hot-toast';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import PhotoNavBar from '../components/PhotoNavBar';
-import PhotoBody from '../components/PhotoBody';
 import PhotoFooter from '../components/PhotoFooter';
 import PhotoThemeSwither from '../components/PhotoThemeSwitcher';
 
@@ -13,6 +12,8 @@ import { PostContent } from '../utils/PostContent';
 import { getNotionPosts } from '../utils/getNotionPosts';
 
 import siteConfig from '../config/site.config';
+import PhotoHeader from '../components/PhotoHeader';
+import PhotoCard from '../components/PhotoCard';
 
 export const getStaticProps = async ({ locale }: any) => {
     const unSortedPosts = (await getNotionPosts()).filter((posts) => posts.published);
@@ -62,13 +63,21 @@ const PhotoHomePage = ({ posts }: { posts: PostContent[] }) => {
             <div id='notion-photo-homepage' className='flex min-h-screen select-none flex-col font-Rubik dark:bg-[#23272d]'>
                 <Toaster />
 
-                <PhotoNavBar></PhotoNavBar>
+                <PhotoNavBar />
 
-                <PhotoBody posts={posts}></PhotoBody>
+                <div className='container mx-auto flex-grow justify-center px-4 sm:px-6'>
+                    <div id='notion-photo-content' className='my-16'>
+                        <PhotoHeader></PhotoHeader>
 
-                <PhotoFooter></PhotoFooter>
+                        <div id='notion-photo-body' className='columns-1 md:columns-3'>
+                            {posts?.map((post) => post.published && <PhotoCard key={post.id} post={post} />)}
+                        </div>
+                    </div>
+                </div>
 
-                <PhotoThemeSwither></PhotoThemeSwither>
+                <PhotoFooter />
+
+                <PhotoThemeSwither />
             </div>
         </div>
     );
