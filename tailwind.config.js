@@ -3,7 +3,7 @@ module.exports = {
     darkMode: 'class',
     theme: {
         extend: {
-            fontFamily: { Rubik: ['Rubik'] },
+            fontFamily: { Golos: ['Golos Text'] },
         },
     },
     plugins: [],

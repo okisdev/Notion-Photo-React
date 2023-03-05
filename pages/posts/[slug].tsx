@@ -4,21 +4,21 @@ import { FC } from 'react';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { getNotionPosts } from '../../utils/getNotionPosts';
-import { PostContent } from '../../utils/PostContent';
+import { getNotionTable } from '@/utils/notion/getNotionTable';
 
-import PhotoNavBar from '../../components/PhotoNavBar';
-import PhotoFooter from '../../components/PhotoFooter';
-import PhotoCopyright from '../../components/PhotoCopyright';
-import PhotoBackHome from '../../components/PhotoBackHome';
-import PhotoThemeSwither from '../../components/PhotoThemeSwitcher';
+import PhotoNavBar from '@/components/global/navbar';
+import PhotoFooter from '@/components/global/footer';
+import PhotoCopyright from '@/components/slug/copyright';
+import PhotoBackHome from '@/components/slug/back';
 
-import siteConfig from '../../config/site.config';
+import { PostProps } from '@/types/app';
+
+import siteConfig from '@/config/site.config';
 
 export const getServerSideProps = async ({ params, locale }: any) => {
     const { slug } = params as { slug: string };
 
-    const notionPosts = (await getNotionPosts()).filter((posts) => posts.published);
+    const notionPosts = (await getNotionTable()).filter((posts) => posts.published);
 
     const notionPostIndex = notionPosts.findIndex((post) => post.slug === slug);
 
@@ -32,7 +32,7 @@ export const getServerSideProps = async ({ params, locale }: any) => {
     };
 };
 
-const PhotoPost: FC<{ notionPost: PostContent }> = ({ notionPost }: { notionPost: PostContent }) => {
+const Post: FC<{ notionPost: PostProps }> = ({ notionPost }: { notionPost: PostProps }) => {
     return (
         <div>
             <Head>
@@ -41,7 +41,7 @@ const PhotoPost: FC<{ notionPost: PostContent }> = ({ notionPost }: { notionPost
                 </title>
 
                 <meta name='description' content={`${notionPost.title} - ${siteConfig.global.site.name}`} />
-                <meta name='keywords' content={`${notionPost.title}, ${siteConfig.global.author}, ${siteConfig.global.site.name}`} />
+                <meta name='keywords' content={`${notionPost.title}, ${siteConfig.global.site.author}, ${siteConfig.global.site.name}`} />
 
                 <meta property='og:title' content={`${notionPost.title} - ${siteConfig.global.site.name}`} />
                 <meta property='og:description' content={`${notionPost.title} - ${siteConfig.global.site.name}`} />
@@ -57,18 +57,21 @@ const PhotoPost: FC<{ notionPost: PostContent }> = ({ notionPost }: { notionPost
                 <meta name='twitter:url' content={`${siteConfig.global.site.url}/posts/${notionPost.slug}`} />
             </Head>
 
-            <div id='notion-photo-post' className='flex min-h-screen select-none flex-col font-Rubik dark:bg-[#23272d]'>
-                <PhotoNavBar></PhotoNavBar>
+            <div id='notion-photo-post' className='flex min-h-screen select-none flex-col font-Golos dark:bg-[#252525]'>
+                <PhotoNavBar />
 
-                <div className='container mx-auto px-6 dark:text-[#adbac7] sm:px-8'>
-                    <div id='notion-photo-post-body-content' className='my-20 leading-6'>
+                <div className='container mx-auto px-6 dark:text-neutral-300 sm:px-8'>
+                    <div id='notion-photo-post-body-content' className='my-20 space-y-3 leading-6'>
+                        <div>
+                            <PhotoBackHome />
+                            <p id='notion-photo-post-name' className='text-center text-2xl font-semibold'>
+                                {notionPost.title.split(' - ')[0]}
+                            </p>
+                        </div>
                         <article id='notion-photo-post-article'>
                             <div id='notion-photo-post-detail' className='space-y-3'>
                                 <img id='notion-photo-post-img' src={notionPost.url} alt={notionPost.title} className='mx-auto' />
-                                <p id='notion-photo-post-name' className='text-center text-3xl font-bold'>
-                                    {notionPost.title.split(' - ')[0]}
-                                </p>
-                                <p id='notion-photo-post-location' className='text-center text-xl font-bold'>
+                                <p id='notion-photo-post-location' className='text-center text-xl font-semibold'>
                                     {notionPost.title.split(' - ')[1]}
                                 </p>
                             </div>
@@ -76,15 +79,11 @@ const PhotoPost: FC<{ notionPost: PostContent }> = ({ notionPost }: { notionPost
                     </div>
                 </div>
 
-                <PhotoCopyright notionPost={notionPost}></PhotoCopyright>
+                <PhotoCopyright notionPost={notionPost} />
 
-                <PhotoBackHome></PhotoBackHome>
-
-                <PhotoFooter></PhotoFooter>
-
-                <PhotoThemeSwither></PhotoThemeSwither>
+                <PhotoFooter />
             </div>
         </div>
     );
 };
-export default PhotoPost;
+export default Post;

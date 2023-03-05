@@ -4,19 +4,19 @@ import { Toaster } from 'react-hot-toast';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import PhotoNavBar from '../components/PhotoNavBar';
-import PhotoFooter from '../components/PhotoFooter';
-import PhotoThemeSwither from '../components/PhotoThemeSwitcher';
+import PhotoNavBar from '@/components/global/navbar';
+import PhotoFooter from '@/components/global/footer';
 
-import { PostContent } from '../utils/PostContent';
-import { getNotionPosts } from '../utils/getNotionPosts';
+import { PostProps } from '@/types/app';
 
-import siteConfig from '../config/site.config';
-import PhotoHeader from '../components/PhotoHeader';
-import PhotoCard from '../components/PhotoCard';
+import { getNotionTable } from '@/utils/notion/getNotionTable';
+
+import siteConfig from '@/config/site.config';
+import PhotoHeader from '@/components/home/header';
+import PhotoCard from '@/components/home/card';
 
 export const getStaticProps = async ({ locale }: any) => {
-    const unSortedPosts = (await getNotionPosts()).filter((posts) => posts.published);
+    const unSortedPosts = (await getNotionTable()).filter((posts) => posts.published);
 
     const posts = unSortedPosts.sort(function (a, b) {
         return Date.parse(b.date) - Date.parse(a.date);
@@ -31,7 +31,7 @@ export const getStaticProps = async ({ locale }: any) => {
     };
 };
 
-const PhotoHomePage = ({ posts }: { posts: PostContent[] }) => {
+const HomePage = ({ posts }: { posts: PostProps[] }) => {
     return (
         <div>
             <Head>
@@ -39,7 +39,7 @@ const PhotoHomePage = ({ posts }: { posts: PostContent[] }) => {
 
                 <meta charSet='UTF-8' />
 
-                <meta name='author' content={siteConfig.global.author} />
+                <meta name='author' content={siteConfig.global.site.author} />
                 <meta name='description' content={siteConfig.global.site.description} />
                 <meta httpEquiv='Content-Type' content='text/html' />
                 <meta httpEquiv='X-UA-Compatible' content='IE=Edge' />
@@ -60,27 +60,25 @@ const PhotoHomePage = ({ posts }: { posts: PostContent[] }) => {
                 <meta name='twitter:url' content={siteConfig.global.site.url} />
             </Head>
 
-            <div id='notion-photo-homepage' className='flex min-h-screen select-none flex-col font-Rubik dark:bg-[#23272d]'>
+            <div id='notion-photo-homepage' className='flex min-h-screen select-none flex-col font-Golos dark:bg-[#252525]'>
                 <Toaster />
 
                 <PhotoNavBar />
 
                 <div className='container mx-auto flex-grow justify-center px-4 sm:px-6'>
                     <div id='notion-photo-content' className='my-16'>
-                        <PhotoHeader></PhotoHeader>
+                        <PhotoHeader />
 
-                        <div id='notion-photo-body' className='columns-1 md:columns-3'>
+                        <div id='notion-photo-body' className='columns-1 md:columns-4'>
                             {posts?.map((post) => post.published && <PhotoCard key={post.id} post={post} />)}
                         </div>
                     </div>
                 </div>
 
                 <PhotoFooter />
-
-                <PhotoThemeSwither />
             </div>
         </div>
     );
 };
 
-export default PhotoHomePage;
+export default HomePage;

@@ -1,4 +1,4 @@
-export interface PostContent {
+export interface PostProps {
     id: string;
     title: string;
     date: string;

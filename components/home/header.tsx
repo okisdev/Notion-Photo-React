@@ -1,4 +1,4 @@
-import siteConfig from '../config/site.config';
+import siteConfig from '@/config/site.config';
 
 const stringToJSX = () => {
     return {
@@ -6,11 +6,11 @@ const stringToJSX = () => {
     };
 };
 
-const PhotoHeader = () => {
+const Header = () => {
     return (
-        <div id='notion-photo-header' className='my-10 flex flex-row items-center justify-center space-x-2 dark:text-[#adbac7] md:space-x-8'>
+        <div id='notion-photo-header' className='my-10 flex flex-row items-center justify-center space-x-2 dark:text-neutral-300 md:space-x-8'>
             <div id='notion-photo-header-content'>
-                <div id='notion-photo-header-title' className='text-center text-2xl font-bold'>
+                <div id='notion-photo-header-title' className='text-center text-2xl font-semibold'>
                     <span>{siteConfig.global.site.name}</span>
                 </div>
                 <div id='notion-photo-header-description' className='pt-6'>
@@ -23,4 +23,4 @@ const PhotoHeader = () => {
     );
 };
 
-export default PhotoHeader;
+export default Header;
