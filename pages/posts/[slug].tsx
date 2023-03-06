@@ -60,8 +60,8 @@ const Post: FC<{ notionPost: PostProps }> = ({ notionPost }: { notionPost: PostP
             <div id='notion-photo-post' className='flex min-h-screen select-none flex-col font-Golos dark:bg-[#252525]'>
                 <PhotoNavBar />
 
-                <div className='container mx-auto px-6 dark:text-neutral-300 sm:px-8'>
-                    <div id='notion-photo-post-body-content' className='my-20 space-y-3 leading-6'>
+                <div className='container mx-auto dark:text-neutral-300'>
+                    <div id='notion-photo-post-body-content' className='my-10 space-y-3 leading-6 md:my-20'>
                         <div>
                             <PhotoBackHome />
                             <p id='notion-photo-post-name' className='text-center text-2xl font-semibold'>
@@ -70,7 +70,7 @@ const Post: FC<{ notionPost: PostProps }> = ({ notionPost }: { notionPost: PostP
                         </div>
                         <article id='notion-photo-post-article'>
                             <div id='notion-photo-post-detail' className='space-y-3'>
-                                <img id='notion-photo-post-img' src={notionPost.url} alt={notionPost.title} className='mx-auto' />
+                                <img id='notion-photo-post-img' src={notionPost.url} alt={notionPost.title} className='mx-auto w-11/12' />
                                 <p id='notion-photo-post-location' className='text-center text-xl font-semibold'>
                                     {notionPost.title.split(' - ')[1]}
                                 </p>

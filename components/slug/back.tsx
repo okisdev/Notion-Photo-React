@@ -8,7 +8,7 @@ const BackHome = () => {
     const { t } = useTranslation('common');
 
     return (
-        <div id='notion-photo-back-home' className='container mx-auto my-3 w-11/12 px-6 sm:px-8 md:w-7/12'>
+        <div id='notion-photo-back-home' className='container mx-auto my-3 w-11/12 md:w-7/12'>
             <p className='flex items-center justify-center space-x-1'>
                 <BiArrowBack />
                 <Link href='/' passHref>

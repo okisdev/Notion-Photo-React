@@ -13,10 +13,6 @@ const Footer = () => {
                 </Link>
                 <p>{siteConfig.global.content.footer.copyright}</p>
                 <p id='notion-photo-footer-built-with' className='text-sm md:px-52'>
-                    <Link className='underline transition duration-500 hover:bg-yellow-500 dark:hover:bg-yellow-600' href='https://reactjs.org' target='_blank'>
-                        React
-                    </Link>
-                    /
                     <Link className='underline transition duration-500 hover:bg-yellow-500 dark:hover:bg-yellow-600' href='https://nextjs.org' target='_blank'>
                         Next.js
                     </Link>

@@ -1,9 +1,11 @@
+import Link from 'next/link';
+
 import { useTranslation } from 'next-i18next';
 
 import siteConfig from '@/config/site.config';
 
 const Copyright = ({ notionPost }: { notionPost: any }) => {
-    const publishDomain = typeof window !== 'undefined' ? window.location.origin : 'https://react-photo-blog.demo.harisfox.com/';
+    const publishDomain = typeof window !== 'undefined' ? window.location.origin : 'https://npr.okis.dev/';
 
     const { t } = useTranslation('common');
 
@@ -15,16 +17,9 @@ const Copyright = ({ notionPost }: { notionPost: any }) => {
                         <span className='font-semibold'>{notionPost.title}</span>
                     </div>
                     <div id='notion-photo-copyright-url'>
-                        <span>
-                            <a
-                                href={`${publishDomain}/posts/${notionPost.slug}`}
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                className='underline transition duration-500 hover:bg-yellow-500 dark:hover:bg-yellow-600'
-                            >
-                                {publishDomain}/posts/{notionPost.slug}
-                            </a>
-                        </span>
+                        <Link href={`${publishDomain}/posts/${notionPost.slug}`} target='_blank' className='underline transition duration-500 hover:bg-yellow-500 dark:hover:bg-yellow-600'>
+                            {publishDomain}/posts/{notionPost.slug}
+                        </Link>
                     </div>
                 </div>
                 <div id='notion-photo-copyright-body' className='flew-row flex space-x-3'>
@@ -38,16 +33,9 @@ const Copyright = ({ notionPost }: { notionPost: any }) => {
                     </div>
                     <div id='notion-photo-copyright-license' className='flex flex-col'>
                         <span>{t('License')}</span>
-                        <span className='font-semibold'>
-                            <a
-                                href={siteConfig.global.content.license.url}
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                className='underline transition duration-500 hover:bg-yellow-500 dark:hover:bg-yellow-600'
-                            >
-                                {siteConfig.global.content.license.name}
-                            </a>
-                        </span>
+                        <Link href={siteConfig.global.content.license.url} target='_blank' className='font-semibold underline transition duration-500 hover:bg-yellow-500 dark:hover:bg-yellow-600'>
+                            {siteConfig.global.content.license.name}
+                        </Link>
                     </div>
                 </div>
                 <div id='notion-photo-copyright-footer'>
