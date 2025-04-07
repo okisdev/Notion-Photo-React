@@ -16,11 +16,11 @@ export async function RelatedPhotos({ currentPhotoId }: { currentPhotoId: string
           <h3 className='font-medium text-base text-foreground transition-colors group-hover:text-muted-foreground'>{relatedPhoto.title}</h3>
           <div className='mt-1.5 flex items-center gap-2'>
             <p className='text-muted-foreground text-xs'>{relatedPhoto.date ? format(new Date(relatedPhoto.date), 'MMM d, yyyy') : ''}</p>
-            {relatedPhoto.tag && relatedPhoto.tag.length > 0 && (
+            {relatedPhoto.location && relatedPhoto.location.length > 0 && (
               <div className='flex gap-1'>
-                {relatedPhoto.tag.slice(0, 1).map((tag) => (
-                  <span key={tag} className='rounded-sm bg-secondary px-1.5 py-0.5 text-secondary-foreground text-xs'>
-                    {tag}
+                {relatedPhoto.location.slice(0, 1).map((location) => (
+                  <span key={location} className='rounded-sm bg-secondary px-1.5 py-0.5 text-secondary-foreground text-xs'>
+                    {location}
                   </span>
                 ))}
               </div>
