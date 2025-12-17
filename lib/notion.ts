@@ -1,11 +1,11 @@
-import { env } from '@/lib/env';
 import { Client } from '@notionhq/client';
+import { env } from '@/lib/env';
 
 export const notion = new Client({
   auth: env.NOTION_API_KEY,
 });
 
-export const PHOTO_TABLE_ID = env.NOTION_DATABASE_ID;
+export const PHOTO_TABLE_ID = env.NOTION_DATA_SOURCE_ID;
 
 export interface Photo {
   id: string;
@@ -20,8 +20,8 @@ export interface Photo {
 
 export async function getAllPhotos(): Promise<Photo[]> {
   try {
-    const response = await notion.databases.query({
-      database_id: PHOTO_TABLE_ID,
+    const response = await notion.dataSources.query({
+      data_source_id: PHOTO_TABLE_ID,
       filter: {
         property: 'published',
         checkbox: {
@@ -41,7 +41,7 @@ export async function getAllPhotos(): Promise<Photo[]> {
         slug: properties.slug?.rich_text[0]?.plain_text || '',
         author: properties.author?.select[0]?.name || '',
         url: properties.url?.url || '',
-        published: properties.published?.checkbox || false,
+        published: properties.published?.checkbox,
       };
     });
   } catch (error) {
@@ -53,8 +53,8 @@ export async function getAllPhotos(): Promise<Photo[]> {
 // Function to fetch a single photo by slug
 export async function getPhotoBySlug(slug: string): Promise<Photo | null> {
   try {
-    const response = await notion.databases.query({
-      database_id: PHOTO_TABLE_ID,
+    const response = await notion.dataSources.query({
+      data_source_id: PHOTO_TABLE_ID,
       filter: {
         property: 'slug',
         rich_text: {
@@ -79,7 +79,7 @@ export async function getPhotoBySlug(slug: string): Promise<Photo | null> {
       slug: properties.slug?.rich_text[0]?.plain_text || '',
       author: properties.author?.select[0]?.name || '',
       url: properties.url?.url || '',
-      published: properties.published?.checkbox || false,
+      published: properties.published?.checkbox,
     };
   } catch (error) {
     console.error(`Error fetching post with slug ${slug} from Notion:`, error);
