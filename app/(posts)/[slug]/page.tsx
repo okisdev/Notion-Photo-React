@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import { PhotoContent } from '@/components/post/content';
+import { PostFooter } from '@/components/post/footer';
 import { PhotoHeader } from '@/components/post/header';
 import { PhotoSkeleton } from '@/components/post/loading';
 import { RelatedPhotos } from '@/components/post/related';
-import { config } from '@/config';
 import { getPhotoBySlug } from '@/lib/notion';
 
 export async function generateMetadata({
@@ -20,7 +20,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${photo.title} - ${config.site.name}`,
+    title: `${photo.title} - Notion Photo React`,
     description: photo.location || `Photo taken on ${photo.date}`,
   };
 }
@@ -47,7 +47,7 @@ export default async function PhotoPage({
           <Suspense fallback={<PhotoSkeleton sections={['related']} />}>
             <div className='border-tertiary border-b' />
             <RelatedPhotos slug={slug} />
-            {config.post.footer}
+            <PostFooter />
           </Suspense>
         </Suspense>
       </Suspense>
