@@ -1,8 +1,8 @@
+import { Suspense } from 'react';
 import { GallerySection } from '@/components/home/gallery';
 import { GallerySectionSkeleton } from '@/components/home/loading';
 import NewsletterForm from '@/components/shared/newsletter-form';
 import { config } from '@/config';
-import { Suspense } from 'react';
 
 export default function Home() {
   return (

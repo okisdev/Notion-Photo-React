@@ -1,5 +1,8 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
+import { Link } from 'next-view-transitions';
+import { Fragment } from 'react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -8,9 +11,6 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { cn } from '@/lib/utils';
-import { Link } from 'next-view-transitions';
-import { usePathname } from 'next/navigation';
-import { Fragment } from 'react';
 
 export default function PostLayout({
   children,
@@ -28,8 +28,8 @@ export default function PostLayout({
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
               <Link
-                href='/'
                 className='text-muted-foreground transition-colors hover:text-foreground'
+                href='/'
               >
                 Home
               </Link>
@@ -49,11 +49,11 @@ export default function PostLayout({
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
                     <Link
-                      href={`/${path}`}
                       className={cn(
                         'text-muted-foreground transition-colors hover:text-foreground',
                         index === paths.length - 1 && 'text-foreground'
                       )}
+                      href={`/${path}`}
                     >
                       {pathName}
                     </Link>

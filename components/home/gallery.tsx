@@ -1,6 +1,6 @@
-import { getAllPhotos } from '@/lib/notion';
 import { format } from 'date-fns';
 import { Link } from 'next-view-transitions';
+import { getAllPhotos } from '@/lib/notion';
 
 export async function GallerySection() {
   const photos = await getAllPhotos();
@@ -15,14 +15,14 @@ export async function GallerySection() {
     <section className='mb-10 grid grid-cols-1 gap-6 md:grid-cols-2'>
       {sortedPhotos.length > 0 ? (
         sortedPhotos.map((photo) => (
-          <Link key={photo.id} href={`/${photo.slug}`} className='group block'>
+          <Link className='group block' href={`/${photo.slug}`} key={photo.id}>
             <article className='overflow-hidden rounded-lg border bg-card transition-all duration-300 hover:border-accent hover:shadow-lg'>
               <div className='relative aspect-[4/3] overflow-hidden bg-muted'>
                 <img
-                  src={photo.url}
                   alt={photo.title}
                   className='h-full w-full object-cover transition-transform duration-500 group-hover:scale-110'
                   loading='lazy'
+                  src={photo.url}
                 />
                 <div className='absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-70' />
               </div>

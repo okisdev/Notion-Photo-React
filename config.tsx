@@ -14,15 +14,15 @@ export const config = {
         <p className='text-muted-foreground text-sm'>
           Follow Harry Yep on{' '}
           <a
-            href='https://twitter.com/okisdev'
             className='text-foreground transition-colors hover:text-muted-foreground'
+            href='https://twitter.com/okisdev'
           >
             Twitter
           </a>{' '}
           and{' '}
           <a
-            href='https://github.com/okisdev'
             className='text-foreground transition-colors hover:text-muted-foreground'
+            href='https://github.com/okisdev'
           >
             GitHub
           </a>

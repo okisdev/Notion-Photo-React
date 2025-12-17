@@ -9,7 +9,7 @@ export function GallerySectionSkeleton() {
   return (
     <section className='mb-10 grid grid-cols-1 gap-6 md:grid-cols-2'>
       {skeletonItems.map((id) => (
-        <div key={id} className='overflow-hidden rounded-lg border bg-card'>
+        <div className='overflow-hidden rounded-lg border bg-card' key={id}>
           <div className='relative aspect-[4/3] overflow-hidden'>
             <Skeleton className='h-full w-full' />
           </div>

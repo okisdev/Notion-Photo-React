@@ -3,10 +3,10 @@ import { cn } from '@/lib/utils';
 import { font } from '@/styles/font';
 import { ReactScan } from '@/utils/react-scan';
 import '@/styles/globals.css';
-import { env } from '@/lib/env';
 import type { Metadata } from 'next';
-import { ViewTransitions } from 'next-view-transitions';
 import Script from 'next/script';
+import { ViewTransitions } from 'next-view-transitions';
+import { env } from '@/lib/env';
 
 export const metadata: Metadata = {
   title: {
@@ -26,20 +26,20 @@ export default async function RootLayout({
       <html lang='en' suppressHydrationWarning>
         <head>
           <meta
-            name='theme-color'
-            media='(prefers-color-scheme: light)'
             content='white'
+            media='(prefers-color-scheme: light)'
+            name='theme-color'
           />
           <meta
-            name='theme-color'
-            media='(prefers-color-scheme: dark)'
             content='black'
+            media='(prefers-color-scheme: dark)'
+            name='theme-color'
           />
           {env.NEXT_PUBLIC_UMAMI_URL && (
             <Script
+              data-website-id={env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
               defer
               src={env.NEXT_PUBLIC_UMAMI_URL}
-              data-website-id={env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
             />
           )}
         </head>

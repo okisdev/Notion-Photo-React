@@ -1,7 +1,7 @@
 'use client';
 
-import { subscribeToNewsletter } from '@/lib/actions';
 import { useState } from 'react';
+import { subscribeToNewsletter } from '@/lib/actions';
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState('');
@@ -46,21 +46,21 @@ export default function NewsletterForm() {
         Get exclusive content once a month.
       </p>
 
-      <form onSubmit={handleSubmit} className='flex flex-col gap-2'>
+      <form className='flex flex-col gap-2' onSubmit={handleSubmit}>
         <div className='flex gap-2'>
           <input
-            type='email'
-            value={email}
+            className='flex-1 rounded-md border border-input bg-background px-3 py-1.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring'
+            disabled={status === 'loading'}
             onChange={(e) => setEmail(e.target.value)}
             placeholder='Enter your email'
-            className='flex-1 rounded-md border border-input bg-background px-3 py-1.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring'
             required
-            disabled={status === 'loading'}
+            type='email'
+            value={email}
           />
           <button
-            type='submit'
             className='rounded-md bg-primary px-4 py-1.5 text-primary-foreground text-sm transition-colors hover:bg-primary/90 disabled:opacity-50'
             disabled={status === 'loading'}
+            type='submit'
           >
             {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
           </button>
