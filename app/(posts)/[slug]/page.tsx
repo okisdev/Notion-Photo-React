@@ -1,47 +1,56 @@
-import { PhotoContent } from '@/components/post/content';
-import { PhotoHeader } from '@/components/post/header';
-import { PhotoContentSkeleton, PhotoHeaderSkeleton, RelatedPhotosSkeleton } from '@/components/post/loading';
-import { RelatedPhotos } from '@/components/post/related';
-import { config } from '@/config';
-import { getPhotoBySlug } from '@/lib/notion';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
+import { PhotoContent } from '@/components/post/content';
+import { PostFooter } from '@/components/post/footer';
+import { PhotoHeader } from '@/components/post/header';
+import { PhotoSkeleton } from '@/components/post/loading';
+import { RelatedPhotos } from '@/components/post/related';
+import { getPhotoBySlug } from '@/lib/notion';
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const photo = await getPhotoBySlug(slug);
 
-  if (!photo) return notFound();
+  if (!photo) {
+    return notFound();
+  }
 
   return {
-    title: `${photo.title} - ${config.site.name}`,
+    title: `${photo.title} - Notion Photo React`,
     description: photo.location || `Photo taken on ${photo.date}`,
   };
 }
 
-export default async function PhotoPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function PhotoPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
-  const photo = await getPhotoBySlug(slug);
-
-  if (!photo) return notFound();
 
   return (
     <div className='mx-auto max-w-4xl space-y-8'>
-      <Suspense fallback={<PhotoHeaderSkeleton />}>
-        <PhotoHeader photo={photo} />
+      <Suspense
+        fallback={<PhotoSkeleton sections={['header', 'content', 'related']} />}
+      >
+        <PhotoHeader slug={slug} />
+
+        <Suspense
+          fallback={<PhotoSkeleton sections={['content', 'related']} />}
+        >
+          <PhotoContent slug={slug} />
+
+          <Suspense fallback={<PhotoSkeleton sections={['related']} />}>
+            <div className='border-tertiary border-b' />
+            <RelatedPhotos slug={slug} />
+            <PostFooter />
+          </Suspense>
+        </Suspense>
       </Suspense>
-
-      <Suspense fallback={<PhotoContentSkeleton />}>
-        <PhotoContent photo={photo} />
-      </Suspense>
-
-      <div className='border-tertiary border-b' />
-
-      <Suspense fallback={<RelatedPhotosSkeleton />}>
-        <RelatedPhotos currentPhotoId={photo.id} />
-      </Suspense>
-
-      {config.post.footer}
     </div>
   );
 }

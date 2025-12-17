@@ -1,6 +1,6 @@
+import type { MetadataRoute } from 'next';
 import { env } from '@/lib/env';
 import { getAllPhotos } from '@/lib/notion';
-import type { MetadataRoute } from 'next';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const photos = await getAllPhotos();

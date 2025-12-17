@@ -1,7 +1,7 @@
-import { env } from '@/lib/env';
-import { getPhotoBySlug } from '@/lib/notion';
 import { format } from 'date-fns';
 import { ImageResponse } from 'next/og';
+import { env } from '@/lib/env';
+import { getPhotoBySlug } from '@/lib/notion';
 
 export const size = {
   width: 1200,
@@ -62,7 +62,9 @@ export default async function Image({ params }: { params: { slug: string } }) {
             color: '#666',
           }}
         >
-          {photo.date && <div>{format(new Date(photo.date), 'MMMM d, yyyy')}</div>}
+          {photo.date && (
+            <div>{format(new Date(photo.date), 'MMMM d, yyyy')}</div>
+          )}
           {photo.location && photo.location.length > 0 && (
             <div style={{ display: 'flex', gap: '10px' }}>
               {photo.location.map((location) => (

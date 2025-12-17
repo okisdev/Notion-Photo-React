@@ -1,12 +1,15 @@
 import { Skeleton } from '@/components/ui/skeleton';
 
 export function GallerySectionSkeleton() {
-  const skeletonItems = Array.from({ length: 6 }, (_, i) => `skeleton-${i + 1}`);
+  const skeletonItems = Array.from(
+    { length: 6 },
+    (_, i) => `skeleton-${i + 1}`
+  );
 
   return (
     <section className='mb-10 grid grid-cols-1 gap-6 md:grid-cols-2'>
       {skeletonItems.map((id) => (
-        <div key={id} className='overflow-hidden rounded-lg border bg-card'>
+        <div className='overflow-hidden rounded-lg border bg-card' key={id}>
           <div className='relative aspect-[4/3] overflow-hidden'>
             <Skeleton className='h-full w-full' />
           </div>

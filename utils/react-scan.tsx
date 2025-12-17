@@ -1,15 +1,14 @@
 'use client';
 
+import { useEffect } from 'react';
 import { scan } from 'react-scan';
 
-import { type JSX, useEffect } from 'react';
-
-export function ReactScan(): JSX.Element {
+export function ReactScan(): null {
   useEffect(() => {
     scan({
       enabled: true,
     });
   }, []);
 
-  return <></>;
+  return null;
 }
